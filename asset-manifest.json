@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/landing-page-project/static/css/main.b12019cc.css",
+    "main.js": "/landing-page-project/static/js/main.8cba4e5b.js",
+    "static/media/background.png": "/landing-page-project/static/media/background.52d9bb2b00638f7a2abf.png",
+    "static/media/oracle.png": "/landing-page-project/static/media/oracle.799a369dc82688644d2a.png",
+    "index.html": "/landing-page-project/index.html",
+    "main.b12019cc.css.map": "/landing-page-project/static/css/main.b12019cc.css.map",
+    "main.8cba4e5b.js.map": "/landing-page-project/static/js/main.8cba4e5b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b12019cc.css",
+    "static/js/main.8cba4e5b.js"
+  ]
+}
