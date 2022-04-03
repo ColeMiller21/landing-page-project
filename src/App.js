@@ -1,48 +1,63 @@
 import "./App.css";
+import { useEffect } from "react";
+import Div100vh from "react-div-100vh";
 import oracle from "./images/oracle.png";
 import { FaTwitter } from "react-icons/fa";
 
 function App() {
   const twitterLink = "https://twitter.com/theAncestorsNFT";
+
+  const appHeight = () => {
+    let doc = document.documentElement;
+    doc.style.setProperty("—-app-height", `${window.innerHeight}px`);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", appHeight);
+    appHeight();
+  }, []);
+
   return (
-    <div className="bg-cover main-background">
-      <div className="flex lg:flex-row flex-col">
-        <div className="lg:basis-1/2 basis-1/3 pt-10 lg:pt-0 flex flex-col justify-center lg:h-screen place-items-center w-[90%]">
-          <div className="text-center flex-col flex z-10">
-            <p className="font-roboto lg:text-4xl md:text-2xl sm:text-xl text-white font-bold leading-9">
-              The time has come for
-            </p>
-            <p className="font-roboto lg:text-4xl md:text-2xl sm:text-xl text-white font-bold leading-9">
-              the{" "}
-              <span className="font-titillium text-yellow-500 lg:text-7xl text-4xl">
-                ANCESTORS
-              </span>{" "}
-              to
-            </p>
-            <p className="font-roboto lg:text-4xl md:text-2xl sm:text-xl text-white font-bold leading-9">
-              return to help mankind
-            </p>
-          </div>
-          <div className="lg:py-6 flex flex-col place-items-center z-10">
-            <p className="font-roboto lg:text-4xl md:text-2xl sm:text-xl text-white font-bold leading-9 text-center">
-              Join the journey before it's too late!
-            </p>
-            <button className="bg-[#1da1f2] text-white font-roboto lg:text-xl lg:py-3 lg:px-7 py-2 px-6 text-lg mt-4 rounded-full lg:ml-8 hover:bg-blue-400 duration-500 focus:drop-shadow-xl ">
-              <a href={twitterLink} target="_blank" rel="noreferrer">
-                <FaTwitter />
-              </a>
-            </button>
+    <Div100vh>
+      <div className="mx-auto h-full flex flex-col sm:flex-row sm-full landscape:flex-row">
+        <div className="flex flex-[1_1_33%] sm:flex-1 landscape:flex-1">
+          <div className="flex flex-col mx-auto w-[90%] place-items-center justify-center md:mt-0">
+            <div className="flex flex-col ">
+              <p className="text-center text-white font-roboto text-xl md:text-2xl">
+                The time has come for
+              </p>
+              <p className="text-center text-white font-roboto text-xl">
+                the{" "}
+                <span className="text-yellow-500 font-titillium font-bold text-3xl md:text-4xl">
+                  ANCESTORS
+                </span>{" "}
+                to
+              </p>
+              <p className="text-center text-white font-roboto text-xl md:text-2xl">
+                return to help mankind
+              </p>
+            </div>
+            <div className="flex flex-col items-center mt-3 md:mt-0">
+              <p className="text-center text-white font-roboto text-xl">
+                Join the journey before it's too late!
+              </p>
+              <button className="bg-[#1da1f2] text-white lg:text-xl lg:py-3 lg:px-7 py-2 px-6 text-lg mt-4 rounded-full  hover:bg-blue-400 duration-500 focus:drop-shadow-xl items-center">
+                <a href={twitterLink} target="_blank" rel="noreferrer">
+                  <FaTwitter />
+                </a>
+              </button>
+            </div>
           </div>
         </div>
-        <div className="lg:basis-1/2 basis-2/3 flex justify-center lg:h-screen lg:relative">
+        <div className="mx-auto flex flex-[1_1_66%] w-full h-full sm:flex-1 landscape:flex-1 justify-center relative">
           <img
-            className="bottom-0 absolute h-[60%] lg:h-[90%]"
+            className="h-[90%] object-fit absolute bottom-0"
             src={oracle}
-            alt="Ancestor Oracle"
+            alt="Oracle Ancestor"
           />
         </div>
       </div>
-    </div>
+    </Div100vh>
   );
 }
 
